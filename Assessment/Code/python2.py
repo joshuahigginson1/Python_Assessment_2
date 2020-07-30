@@ -122,9 +122,7 @@ def seven(a, b, c):
     else:
         output = False
 
-
     return output
-
 
 
 # <QUESTION 8>
@@ -143,25 +141,47 @@ def seven(a, b, c):
 # Use the cli to access the documentation help(str.replace)
 
 def eight(input, a):
+
+    middle_of_string = int(len(input) / 2)
+    middle_of_string = len(middle_of_string)
+
+
+
+
+
+
     return ""
 
 
 # <QUESTION 9>
 
-# Given two string inputs, if one can be made from the other return the boolean True, if not return the boolean False.
-
-# <EXAMPLES>
-
-# nine("god", "dog") → True
-# nine("tree", "tiredest") → True
-# nine("cat", "dog") → False
-# nine("tripping", "gin") → True
-
-# <HINT>
-# There are no hints for this question.
 
 def nine(string1, string2):
-    return False
+    string1_in_string2 = False
+    string2_in_string1 = False
+
+    for letter1 in string1:
+        if letter1 in string2:
+            string1_in_string2 = True
+            continue
+        else:
+            string1_in_sting2 = False
+            break
+
+    for letter2 in string2:
+        if letter2 in string1:
+            string2_in_string1 = True
+        else:
+            string2_in_string1 = False
+            break
+
+    if string1_in_string2 == True or string2_in_string1 == True:
+        output = True
+
+    else:
+        output = False
+
+    return output
 
 
 # <QUESTION 10>
