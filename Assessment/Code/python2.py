@@ -2,6 +2,7 @@
 
 import random
 
+
 # Questions --------------------------
 
 # <QUESTION 1>
@@ -73,17 +74,17 @@ def four(input1, input2):
 
     output = str(output_list)
     output = output.strip("[]")
-    output = output.replace(",","")
+    output = output.replace(",", "")
     output = output.replace(" ", "")
-    output = output.replace("'","")
+    output = output.replace("'", "")
 
     return output
+
 
 # <QUESTION 5>
 
 
 def five():
-
     output = []
 
     while len(output) < 5:
@@ -93,49 +94,37 @@ def five():
 
     return output
 
+
 # <QUESTION 6>
 
-# Given a string, return the boolean True if it ends in "py", and False if not.
-
-# Ignore Case.
-
-# For Example:
-
-# six("ilovepy") → True
-# six("welovepy") → True
-# six("welovepyforreal") → False
-# six("pyiscool") → False
-
-# <HINT>
-# There are no hints for this question.
 
 def six(input):
-    return False
+    if input[-2].lower() == 'p' and input[-1].lower() == 'y':
+        output = True
+    else:
+        output = False
+    return output
 
 
 # <QUESTION 7>
 
-# Given three ints, a b c, one of them is small, one is medium and one is large.
-
-# Return the boolean True if the three values are evenly spaced, so the
-# difference between small and medium is the same as the difference between
-# medium and large.
-
-# Do not assume the ints will come to you in a reasonable order.
-
-# <EXAMPLES>
-
-# seven(2, 4, 6) → True
-# seven(4, 6, 2) → True
-# seven(4, 6, 3) → False
-# seven(4, 60, 9) → False
-
-# <HINT>
-# There is a function for lists called sort.
-# Use the cli to access the documentation help(list.sort)
 
 def seven(a, b, c):
-    return False
+    input_list = [a, b, c]
+    input_list = sorted(input_list)
+
+    smol_mid_dif = input_list[1] - input_list[0]
+    mid_big_dif = input_list[2] - input_list[1]
+
+    if smol_mid_dif == mid_big_dif:
+        output = True
+
+    else:
+        output = False
+
+
+    return output
+
 
 
 # <QUESTION 8>
