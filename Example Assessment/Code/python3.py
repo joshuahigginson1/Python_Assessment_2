@@ -88,7 +88,7 @@ def four(arg1):
 # How did we check if an entry was NOT IN a list?
 # Think about maybe nesting 'if statements' and/or 'for loops'.
 
-def five(input):
+"""def five(input):
 valid_chars_str = ['0','1','2','3','4','5','6','7','8','9','-']
 nums = [1,2,3,4,5,6,7,8,9]
 valid_start_nums = [4,5,6]
@@ -102,6 +102,13 @@ credit_list = []
 			credit_list.append(numbers)
 
 			if int(credit_list[0]) in valid_start_nums:
+
+                if len(credit_list) == 16:
+
+
+
+                else:
+                    output = False
 
 
 
@@ -121,10 +128,6 @@ credit_list = []
 
     take string
 
-    must start with 4, 5, or 6
-
-    len(obj) == 16
-
 
 if no hypens, thats great. if hypens, check in groups of four.
 
@@ -139,45 +142,33 @@ if no hypens, thats great. if hypens, check in groups of four.
 # <QUESTION 6>
 
 
-def six(email, parameter):
-    name_url_split_list = email.split("@")
-    name = name_url_split_list[0].lower()
-    comp_url = name_url_split_list[1]
-    comp_url_split_list = comp_url.split(".")
-    comp = comp_url_split_list[0].lower()
+def seven(input):
+    max_loop = 1
+    list_of_max = []
+    previous_val = ""
+    current_val = ""
 
-    if parameter == 'person':
-        output = name
-    if parameter == 'company':
-        output = comp
+    if input is '':
+        output = 0
+
+    else:
+        for letter in input:
+
+            current_val = letter
+
+            if current_val == previous_val:
+                max_loop += 1
+
+            else:
+                list_of_max.append(max_loop)
+                max_loop = 1
+
+            previous_val = letter
+
+        output = max(list_of_max)
 
     return output
 
-
-# <QUESTION 7>
-
-# Given a string, return the length of the largest "block" in the string.
-# A block is a run of adjacent chars that are the same, do not ignore case.
-
-# <EXAMPLES>
-
-# seven("hoopplla") → 2
-# seven("abbCCCddDDDeeEEE") → 3
-# seven("") → 0
-
-# <HINT>
-# Try using nested for loops and keep track of the longest block.
-
-"""def seven(input):
-    
-    count = 0
-    
-    for letters in input:
-        if 
-    
-    
-    return """
-"""
 
 # <QUESTION 8>
 
@@ -195,29 +186,20 @@ def eight(n):
 
 # <QUESTION 9>
 
-# Write a function which solves the following puzzle.
 
-# We count 35 heads and 94 legs among the chickens and rabbits in a farm. How many rabbits and how many chickens do we have?
-# The values for 'heads' and 'legs' will be inputs and can be different from 35 and 94.
-# The output should be of the form (chickens,rabbits).
-# If there are no solutions to the puzzle, return "no solutions"
+def nine(heads, legs):
+    rabbit = 0
+    chicken = 0
 
-# <EXAMPLES>
+    rabbit = (legs - (2 * heads)) / 2
+    chicken = heads - rabbit
 
-# nine(35, 94) → (23,12)
-# nine(2, 6) → (1,1)
-# nine(12,63) → "no soltuions"
+    output = str(f"({int(chicken)},{int(rabbit)})")
 
-# <HINT>
-# How many legs/heads does a chicken have? chicken has 2 legs and 1 head.
-# How many legs/heads does a rabbit have? rabbit has 4 legs and 1 head.
-# If we have the right number of legs, do we have the right number of heads?
+    if not rabbit.is_integer() or not chicken.is_integer():
+        output = "no solutions"
 
-
-'''
-"def nine(heads, legs):
-    return "no solutions"
-'''
+    return output
 
 
 # <QUESTION 10>
