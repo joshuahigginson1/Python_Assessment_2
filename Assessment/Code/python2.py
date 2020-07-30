@@ -1,6 +1,7 @@
 # Imports -----------------------------
 
 import random
+import math
 
 
 # Questions --------------------------
@@ -137,20 +138,28 @@ def seven(a, b, c):
 # eight("Chocolate", 3) → "Choate"
 # eight("Chocolate", 1) → "Choclate"
 
-# <HINT>
-# Use the cli to access the documentation help(str.replace)
-
 def eight(input, a):
 
-    middle_of_string = int(len(input) / 2)
-    middle_of_string = len(middle_of_string)
+    input_list = list(input)
+
+    middle_of_string = (len(input) / 2)
+    middle_of_string = math.ceil(middle_of_string)
+
+    start_of_remove = int(a/2)
+
+    starting_index = (middle_of_string - start_of_remove) - 1
+
+    for repeats in range(a):
+        input_list.pop(starting_index)
 
 
+    output = str(input_list)
+    output = output.strip("[]")
+    output = output.replace(" ", '')
+    output = output.replace(",", '')
+    output = output.replace("'",'')
 
-
-
-
-    return ""
+    return output
 
 
 # <QUESTION 9>
@@ -186,18 +195,22 @@ def nine(string1, string2):
 
 # <QUESTION 10>
 
-# Write a function which takes 2 integers greater than 0, X,Y as input and generates a 2-dimensional array.
-
-# The element value in the i-th row and j-th column of the array should be i*j.
-
-# <EXAMPLES>
-
-# ten(3,2) → [[0,0,0],[0,1,2]]
-# ten(2,1) → [[0,0]]
-# ten(3,4) → [[0,0,0],[0,1,2],[0,2,4],[0,3,6]]
-
-# <HINT>
-# Think about nesting for loops.
 
 def ten(X, Y):
-    return []
+    num_of_elements = X
+    num_of_lists = Y
+    x_list = []
+    y_list = []
+
+    for lists in range(num_of_lists):
+        for elements in range(num_of_elements):
+            list_value = lists * elements
+            x_list.append(list_value)
+        y_list.append(x_list)
+        x_list = []
+
+    return y_list
+
+
+
+
