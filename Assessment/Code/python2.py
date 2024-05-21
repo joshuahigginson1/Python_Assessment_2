@@ -201,7 +201,3 @@ def ten(X, Y):
         x_list = []
 
     return y_list
-
-
-
-
